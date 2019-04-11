@@ -1,0 +1,27 @@
+def Verificar (a,b,c):
+    if a!=0:
+        return Calculadora(a,b,c)
+    else:
+        return ("Não é uma equação do segundo grau")
+
+def Calculadora(a,b,c):
+    d=b**2-4*a*c #cálculo delta (d)
+    if d==0:
+        r=-b/(2*a)
+        print ("raizes reais e iguais:", r)
+    if d>0:
+        r1=(-b+(d**0.5))/(2*a)
+        r2=(-b-(d**0.5))/(2*a)
+        print ("raizes reais e distintas:", r1, r2)
+    if d<0:
+        r=-b/(2*a)
+        r1=((-d)**0.5)/(2*a)
+        r1=complex(r,r1)
+        r2=complex(r,-r1)
+        print ("raizes diferentes e complexas:", r1, r2)
+
+
+a=float(input("digite o coef quadrático"))
+b=float(input("digite o coef angular"))
+c=float(input("digite o coef linear"))
+Verificar(a,b,c)
